@@ -35,6 +35,13 @@ const ToolPage: React.FC = () => {
       <div className="bg-card-bg p-6 sm:p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-100">
         <ToolComponent />
       </div>
+
+      {/* Google Ad Placeholder - hidden for now */}
+      <div className="hidden my-8 text-center" aria-hidden="true">
+        <div className="bg-gray-200 h-60 w-full flex items-center justify-center rounded-lg">
+            <span className="text-gray-500">Advertisement Placeholder</span>
+        </div>
+      </div>
     </div>
   );
 };
