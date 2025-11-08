@@ -1,9 +1,9 @@
-
 import React, { Suspense } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ToolPage from './pages/ToolPage';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 
 const App: React.FC = () => {
@@ -20,6 +20,7 @@ const App: React.FC = () => {
             </Suspense>
         </main>
         <ScrollToTopButton />
+        <Footer />
       </div>
     </HashRouter>
   );

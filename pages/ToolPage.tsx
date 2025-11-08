@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { tools } from '../data/tools';
+import GoogleAd from '../components/common/GoogleAd';
 
 const ToolPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -36,10 +36,22 @@ const ToolPage: React.FC = () => {
         <ToolComponent />
       </div>
 
-      {/* Google Ad Placeholder - hidden for now */}
-      <div className="hidden my-8 text-center" aria-hidden="true">
-        <div className="bg-gray-200 h-60 w-full flex items-center justify-center rounded-lg">
-            <span className="text-gray-500">Advertisement Placeholder</span>
+      {/* Google Ad Placeholder - Now active */}
+      <div className="my-8 text-center">
+        <div className="bg-gray-100 min-h-[100px] w-full flex items-center justify-center rounded-lg">
+           {/* 
+            * Once you have your Google AdSense account approved,
+            * you will get a client ID (ca-pub-xxxxxxxxxxxxxxxx) and an ad slot ID.
+            * Replace the placeholder values below with your actual IDs.
+            */}
+           <GoogleAd
+              key={slug}
+              client="ca-pub-XXXXXXXXXXXXXXXX" 
+              slot="YYYYYYYYYY"
+              style={{ display: 'block' }}
+              format="auto"
+              responsive="true"
+            />
         </div>
       </div>
     </div>

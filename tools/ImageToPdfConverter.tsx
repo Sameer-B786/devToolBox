@@ -95,7 +95,8 @@ const ImageToPdfConverter: React.FC = () => {
                 <div className="mb-4">
                     <h4 className="font-semibold">Selected Files:</h4>
                     <ul className="list-disc pl-5 text-sm text-gray-700">
-                        {Array.from(files).map(f => <li key={f.name}>{f.name} ({f.type})</li>)}
+                        {/* FIX: Explicitly type 'f' as File to resolve TypeScript error where it was inferred as 'unknown'. */}
+                        {Array.from(files).map((f: File) => <li key={f.name}>{f.name} ({f.type})</li>)}
                     </ul>
                 </div>
             )}
