@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { escapeHtml } from '../utils/textUtils';
 
 // --- Icon Components (to replace lucide-react dependency) ---
 const Icon = ({ children, size = 20, className = '' }: { children: React.ReactNode, size?: number, className?: string }) => (
@@ -63,43 +64,44 @@ export default function MetaTagAndStatusChecker() {
   };
 
   const generateMetaTags = () => {
+    const e = escapeHtml;
     const tags = [];
     
     // Basic Meta Tags
     if (metaData.title) {
-      tags.push(`<title>${metaData.title}</title>`);
-      tags.push(`<meta name="title" content="${metaData.title}">`);
+      tags.push(`<title>${e(metaData.title)}</title>`);
+      tags.push(`<meta name="title" content="${e(metaData.title)}">`);
     }
     if (metaData.description) {
-      tags.push(`<meta name="description" content="${metaData.description}">`);
+      tags.push(`<meta name="description" content="${e(metaData.description)}">`);
     }
     if (metaData.keywords) {
-      tags.push(`<meta name="keywords" content="${metaData.keywords}">`);
+      tags.push(`<meta name="keywords" content="${e(metaData.keywords)}">`);
     }
     if (metaData.author) {
-      tags.push(`<meta name="author" content="${metaData.author}">`);
+      tags.push(`<meta name="author" content="${e(metaData.author)}">`);
     }
-    tags.push(`<meta name="robots" content="${metaData.robots}">`);
+    tags.push(`<meta name="robots" content="${e(metaData.robots)}">`);
     tags.push(`<meta name="viewport" content="width=device-width, initial-scale=1.0">`);
     tags.push(`<meta charset="UTF-8">`);
     if (metaData.themeColor) {
-      tags.push(`<meta name="theme-color" content="${metaData.themeColor}">`);
+      tags.push(`<meta name="theme-color" content="${e(metaData.themeColor)}">`);
     }
 
     // Open Graph Tags
-    if (metaData.title) tags.push(`<meta property="og:title" content="${metaData.title}">`);
-    if (metaData.description) tags.push(`<meta property="og:description" content="${metaData.description}">`);
-    if (metaData.image) tags.push(`<meta property="og:image" content="${metaData.image}">`);
-    if (metaData.url) tags.push(`<meta property="og:url" content="${metaData.url}">`);
-    if (metaData.siteName) tags.push(`<meta property="og:site_name" content="${metaData.siteName}">`);
+    if (metaData.title) tags.push(`<meta property="og:title" content="${e(metaData.title)}">`);
+    if (metaData.description) tags.push(`<meta property="og:description" content="${e(metaData.description)}">`);
+    if (metaData.image) tags.push(`<meta property="og:image" content="${e(metaData.image)}">`);
+    if (metaData.url) tags.push(`<meta property="og:url" content="${e(metaData.url)}">`);
+    if (metaData.siteName) tags.push(`<meta property="og:site_name" content="${e(metaData.siteName)}">`);
     tags.push(`<meta property="og:type" content="website">`);
 
     // Twitter Card Tags
     tags.push(`<meta name="twitter:card" content="summary_large_image">`);
-    if (metaData.title) tags.push(`<meta name="twitter:title" content="${metaData.title}">`);
-    if (metaData.description) tags.push(`<meta name="twitter:description" content="${metaData.description}">`);
-    if (metaData.image) tags.push(`<meta name="twitter:image" content="${metaData.image}">`);
-    if (metaData.twitterHandle) tags.push(`<meta name="twitter:site" content="@${metaData.twitterHandle}">`);
+    if (metaData.title) tags.push(`<meta name="twitter:title" content="${e(metaData.title)}">`);
+    if (metaData.description) tags.push(`<meta name="twitter:description" content="${e(metaData.description)}">`);
+    if (metaData.image) tags.push(`<meta name="twitter:image" content="${e(metaData.image)}">`);
+    if (metaData.twitterHandle) tags.push(`<meta name="twitter:site" content="@${e(metaData.twitterHandle.replace(/^@/, ''))}">`);
 
     return tags.join('\n');
   };

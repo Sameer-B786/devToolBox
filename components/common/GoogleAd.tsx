@@ -21,7 +21,7 @@ const GoogleAd: React.FC<GoogleAdProps> = ({ client, slot, style, format, respon
         } catch (e) {
             console.error("AdSense error:", e);
         }
-    }, [client, slot, style, format, responsive]);
+    }, []);
 
     // Placeholder view for when the ad doesn't load or in development
     if (client === "ca-pub-XXXXXXXXXXXXXXXX") {

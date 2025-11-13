@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleGenAI, Modality } from '@google/genai';
+import { GoogleGenAI, Modality } from 'https://aistudiocdn.com/google-genai@^0.14.2';
 import ActionButton from '../components/common/ActionButton';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import { fileToBase64, getImageMimeType } from '../utils/fileUtils';

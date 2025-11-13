@@ -6,7 +6,6 @@ export enum Category {
   IMAGE = 'Image Tools',
   DEV = 'Data & Development',
   SEO = 'SEO & Web Tools',
-  DOCUMENT = 'Document & File Tools',
 }
 
 export interface Tool {

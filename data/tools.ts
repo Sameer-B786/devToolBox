@@ -5,7 +5,6 @@ import { CalculatorIcon } from '../components/icons/CalculatorIcon';
 import { ImageIcon } from '../components/icons/ImageIcon';
 import { CodeIcon } from '../components/icons/CodeIcon';
 import { SeoIcon } from '../components/icons/SeoIcon';
-import { FileIcon } from '../components/icons/FileIcon';
 
 export const tools: Tool[] = [
   // Text Tools
@@ -336,39 +335,5 @@ export const tools: Tool[] = [
     category: Category.SEO,
     component: React.lazy(() => import('../tools/PageSpeedTest')),
     icon: SeoIcon,
-  },
-
-  // Document & File Tools
-  {
-    slug: 'pdf-to-word-converter',
-    title: 'PDF to Word Converter',
-    description: 'Convert PDF files into editable Word documents.',
-    category: Category.DOCUMENT,
-    component: React.lazy(() => import('../tools/DocumentConverter')),
-    icon: FileIcon,
-  },
-  {
-    slug: 'word-to-pdf-converter',
-    title: 'Word to PDF Converter',
-    description: 'Convert Word documents into PDF files.',
-    category: Category.DOCUMENT,
-    component: React.lazy(() => import('../tools/DocumentConverter')),
-    icon: FileIcon,
-  },
-  {
-    slug: 'pdf-to-ppt-converter',
-    title: 'PDF to PowerPoint Converter',
-    description: 'Convert PDF files into PowerPoint presentations.',
-    category: Category.DOCUMENT,
-    component: React.lazy(() => import('../tools/DocumentConverter')),
-    icon: FileIcon,
-  },
-  {
-    slug: 'excel-to-pdf-converter',
-    title: 'Excel to PDF Converter',
-    description: 'Convert Excel spreadsheets into PDF files.',
-    category: Category.DOCUMENT,
-    component: React.lazy(() => import('../tools/DocumentConverter')),
-    icon: FileIcon,
   },
 ];

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI } from 'https://aistudiocdn.com/google-genai@^0.14.2';
 import ActionButton from './ActionButton';
 import LoadingSpinner from './LoadingSpinner';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';

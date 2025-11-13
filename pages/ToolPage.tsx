@@ -23,6 +23,21 @@ const ToolPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
+       {/* Breadcrumb Navigation */}
+      <nav aria-label="breadcrumb" className="mb-6 text-sm text-gray-500">
+        <ol className="list-none p-0 inline-flex items-center">
+          <li className="flex items-center">
+            <Link to="/" className="hover:text-primary hover:underline">All Tools</Link>
+          </li>
+          <li className="flex items-center" aria-hidden="true">
+            <svg className="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/></svg>
+          </li>
+          <li className="flex items-center">
+            <span className="text-gray-700 font-medium">{title}</span>
+          </li>
+        </ol>
+      </nav>
+
       <div className="flex items-center gap-4 mb-6">
         <div className="bg-blue-100 text-primary p-3 rounded-lg">
            <Icon className="w-8 h-8" />
